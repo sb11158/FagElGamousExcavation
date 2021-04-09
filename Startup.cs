@@ -39,12 +39,17 @@ namespace FagElGamousExcavation
 
             services.AddDbContext<IdentityContext>(opts =>
                 opts.UseSqlServer(Configuration[
-                    "ConnectionStrings:IdentityConnection"]));
+                    "ConnectionStrings:IdentityConnection"],
+                    sqlServerOptionsAction: sqlOptions =>
+                    {
+                        sqlOptions.EnableRetryOnFailure();
+                    }));
+
             services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<IdentityContext>();
 
             services.Configure<IdentityOptions>(opts => {
-                opts.Password.RequiredLength = 8;
+                opts.Password.RequiredLength = 6;
                 opts.Password.RequireNonAlphanumeric = false;
                 opts.Password.RequireLowercase = false;
                 opts.Password.RequireUppercase = false;
@@ -84,6 +89,8 @@ namespace FagElGamousExcavation
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+
+            IdentitySeedData.CreateAdminAccount(app.ApplicationServices, Configuration);
         }
     }
 }

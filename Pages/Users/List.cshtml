@@ -1,8 +1,20 @@
 ﻿@page
 @model ListModel
 
+@using Microsoft.AspNetCore.Identity
+@using System.ComponentModel.DataAnnotations
+@using FagElGamousExcavation.Pages
+
 <table class="table table-sm table-bordered">
-    <tr><th>ID</th><th>Name</th><th>Email</th><th></th></tr>
+    <thead>
+        <tr>
+            @*<th>ID</th>*@
+            <th>Username</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+    </thead>
+    
     @if (Model.Users.Count() == 0)
     {
         <tr><td colspan="4" class="text-center">No User Accounts</td></tr>
@@ -11,21 +23,23 @@
     {
         foreach (IdentityUser user in Model.Users)
         {
-            <tr>
-                <td>@user.Id</td>
-                <td>@user.UserName</td>
-                <td>@user.Email</td>
-                <td class="text-center">
-                    <form asp-page="List" method="post">
-                        <input type="hidden" name="Id" value="@user.Id" />
-                        <a class="btn btn-sm btn-warning" asp-page="Editor"
-                           asp-route-id="@user.Id" asp-route-mode="edit">Edit</a>
-                        <button type="submit" class="btn btn-sm btn-danger">
-                            Delete
-                        </button>
-                    </form>
-                </td>
-            </tr>
+            <tbody>
+                <tr>
+                    @*<td>@user.Id</td>*@
+                    <td>@user.UserName</td>
+                    <td>@user.Email</td>
+                    <td class="text-center">
+                        <form asp-page="List" method="post">
+                            <input type="hidden" name="Id" value="@user.Id" />
+                            <a class="btn btn-sm btn-warning" asp-page="Editor"
+                               asp-route-id="@user.Id" asp-route-mode="edit">Edit</a>
+                            <button type="submit" class="btn btn-sm btn-danger">
+                                Delete
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
         }
     }
 </table>
