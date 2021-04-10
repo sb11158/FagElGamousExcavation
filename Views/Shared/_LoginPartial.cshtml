@@ -2,31 +2,42 @@
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 
-<ul class="navbar-nav">
-@if (SignInManager.IsSignedIn(User))
-{
-    <li class="nav-item">
-        <a class="nav-link text-dark navbar-brand">Hello @User.Identity.Name!</a>
-    </li>
-    <li class="nav-item">
-        <a  class="nav-link text-dark" asp-area="" asp-page="" >Enter Burial Data</a>
-    </li>
-    <li class="nav-item">
-        <a  class="nav-link text-dark" asp-area="" asp-page="/Users/Create">Add a New User</a>
-    </li>
-    <li class="nav-item">
-        <a  class="nav-link text-dark" asp-area="" asp-page="/Account/Details" title="Manage">Account Details</a>
-    </li>
-    <li class="nav-item">
-        <form  class="form-inline" asp-area="" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-            <button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>
-        </form>
-    </li>
-}
-else
-{
-    <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="" asp-page="/Account/Login">Login</a>
-    </li>
-}
-</ul>
+<div class="d-lg-block">
+    <ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark navbar-brand">Hello @User.Identity.Name!</a>
+        </li>
+        <li class="nav-item">
+            <a  class="nav-link text-dark" asp-area="" asp-page="" >Enter Burial Data</a>
+        </li>
+        <div class="dropdown">
+          <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Account Options
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" asp-page="/Account/Details" title="Manage">Account Details</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" asp-page="/Users/Create">Add a New User</a>
+              <a class="dropdown-item" asp-page="/Users/List">View List of Users</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" asp-page="/Roles/Create">Create a new Role</a>
+              <a class="dropdown-item" asp-page="/Roles/List">View List of Roles</a>
+          </div>
+        </div>
+         <li class="nav-item">
+            <form  class="form-inline" asp-area="" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                <button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+            </form>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-page="/Account/Login">Login</a>
+        </li>
+    }
+    </ul>
+</div>
+

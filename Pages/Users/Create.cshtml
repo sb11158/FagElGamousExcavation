@@ -21,7 +21,8 @@
         <input name="Password" class="form-control" value="@Model.Password" />
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
-    <a class="btn btn-secondary" asp-page="list">Back</a>
+    <a class="btn btn-secondary" asp-page="list">List of Users</a>
+    <a class="btn btn-primary" asp-page="/Roles/List">Roles</a>
 </form>
 @functions {
     public class CreateModel : AdminPageModel

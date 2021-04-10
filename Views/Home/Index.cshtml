@@ -1,8 +1,138 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@{ ViewData["Title"] = "Home Page"; }
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="css/animate.css">
+
+<link rel="stylesheet" href="/css/css/owl.carousel.min.css">
+<link rel="stylesheet" href="/css/css/owl.theme.default.min.css">
+<link rel="stylesheet" href="/css/css/magnific-popup.css">
+
+<link rel="stylesheet" href="/css/css/bootstrap-datepicker.css">
+<link rel="stylesheet" href="/css/css/jquery.timepicker.css">
+
+<link rel="stylesheet" href="/css/css/flaticon.css">
+<link rel="stylesheet" href="/css/css/style.css">
+
+@*carousel*@
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="~/img/Pictures/DSCN0004.JPG" alt="First slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="~/img/Pictures/DSCN3977.JPG" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="~/img/Pictures/DSC_0007.jpg" alt="Third slide">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
 </div>
+
+@*info section*@
+<section class="">
+    <div class="container">
+        <div class="row justify-content-center pb-5 mb-3">
+            <div class="col-md-7 heading-section text-center ftco-animate">
+                <span class="subheading">We offer Services</span>
+                <h2>Our car services</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 services ftco-animate">
+                <div class="d-block d-flex">
+                    <div class="icon d-flex justify-content-center align-items-center">
+                        <span class="flaticon-car-service"></span>
+                    </div>
+                    <div class="media-body pl-3">
+                        <h3 class="heading">Oil change</h3>
+                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                        <p><a href="#" class="btn-custom">Read more</a></p>
+                    </div>
+                </div>
+                <div class="d-block d-flex">
+                    <div class="icon d-flex justify-content-center align-items-center">
+                        <span class="flaticon-tyre"></span>
+                    </div>
+                    <div class="media-body pl-3">
+                        <h3 class="heading">Tire Change</h3>
+                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                        <p><a href="#" class="btn-custom">Read more</a></p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4 services ftco-animate">
+                <div class="d-block d-flex">
+                    <div class="icon d-flex justify-content-center align-items-center">
+                        <span class="flaticon-battery"></span>
+                    </div>
+                    <div class="media-body pl-3">
+                        <h3 class="heading">Batteries</h3>
+                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                        <p><a href="#" class="btn-custom">Read more</a></p>
+                    </div>
+                </div>
+                <div class="d-block d-flex">
+                    <div class="icon d-flex justify-content-center align-items-center">
+                        <span class="flaticon-car-engine"></span>
+                    </div>
+                    <div class="media-body pl-3">
+                        <h3 class="heading">Engine Repair</h3>
+                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                        <p><a href="#" class="btn-custom">Read more</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 services ftco-animate">
+                <div class="d-block d-flex">
+                    <div class="icon d-flex justify-content-center align-items-center">
+                        <span class="flaticon-tow-truck"></span>
+                    </div>
+                    <div class="media-body pl-3">
+                        <h3 class="heading">Tow Truck</h3>
+                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                        <p><a href="#" class="btn-custom">Read more</a></p>
+                    </div>
+                </div>
+                <div class="d-block d-flex">
+                    <div class="icon d-flex justify-content-center align-items-center">
+                        <span class="flaticon-repair"></span>
+                    </div>
+                    <div class="media-body pl-3">
+                        <h3 class="heading">Car Maintenance</h3>
+                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                        <p><a href="#" class="btn-custom">Read more</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="/js/js/jquery.min.js"></script>
+<script src="/js/js/jquery-migrate-3.0.1.min.js"></script>
+<script src="/js/js/popper.min.js"></script>
+<script src="/js/js/bootstrap.min.js"></script>
+<script src="/js/js/jquery.easing.1.3.js"></script>
+<script src="/js/js/jquery.waypoints.min.js"></script>
+<script src="/js/js/jquery.stellar.min.js"></script>
+<script src="/js/js/jquery.animateNumber.min.js"></script>
+<script src="/js//js/js/bootstrap-datepicker.js"></script>
+<script src="/js/js/jquery.timepicker.min.js"></script>
+<script src="/js/js/owl.carousel.min.js"></script>
+<script src="/js/js/jquery.magnific-popup.min.js"></script>
+<script src="/js/js/scrollax.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+<script src="/js/js/google-map.js"></script>
+<script src="/js/js/main.js"></script>
