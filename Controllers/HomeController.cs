@@ -12,10 +12,12 @@ namespace FagElGamousExcavation.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private INDIContext context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, INDIContext ctx)
         {
             _logger = logger;
+            context = ctx;
         }
 
         public IActionResult Index()
